@@ -194,7 +194,7 @@ Try{
                     Write-Host "Application:"$result.profile.name", Sandbox:"$sandbox.name", last update on:"$scans_response_data.last_update_time
                     $scandate = $scans_response_data.last_update_time.subString(0,$scans_response_data.last_update_time.Length-4)
                     $lastupdated = [DateTime]::ParseExact($scandate, 'yyyy-MM-dd HH:mm:ss', $null)
-                    $DeleteDate = (Get-Date).AddDays(-1)
+                    $DeleteDate = (Get-Date).AddDays(-7)
                     Write-Host '##vso[task.setvariable variable=AppName, isoutput=true]$AppName'
                     Write-Host '##vso[task.setvariable variable=SandboxName, isoutput=true]$SandboxName'
                     
